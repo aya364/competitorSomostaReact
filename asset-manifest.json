@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/competitorSomostaReact/static/css/main.e3f4bb4e.css",
-    "main.js": "/competitorSomostaReact/static/js/main.5dfa00cb.js",
-    "static/js/453.a9d1b28e.chunk.js": "/competitorSomostaReact/static/js/453.a9d1b28e.chunk.js",
+    "main.js": "/competitorSomostaReact/static/js/main.ebf3e861.js",
+    "static/js/453.419a5d54.chunk.js": "/competitorSomostaReact/static/js/453.419a5d54.chunk.js",
     "static/media/2.jpg": "/competitorSomostaReact/static/media/2.1b23bc7e40b2c02c4ed3.jpg",
     "static/media/9.jpg": "/competitorSomostaReact/static/media/9.6783b324e832ba914b8d.jpg",
     "static/media/10.jpg": "/competitorSomostaReact/static/media/10.58ce88b644e96b0c0bb0.jpg",
     "index.html": "/competitorSomostaReact/index.html",
     "main.e3f4bb4e.css.map": "/competitorSomostaReact/static/css/main.e3f4bb4e.css.map",
-    "main.5dfa00cb.js.map": "/competitorSomostaReact/static/js/main.5dfa00cb.js.map",
-    "453.a9d1b28e.chunk.js.map": "/competitorSomostaReact/static/js/453.a9d1b28e.chunk.js.map"
+    "main.ebf3e861.js.map": "/competitorSomostaReact/static/js/main.ebf3e861.js.map",
+    "453.419a5d54.chunk.js.map": "/competitorSomostaReact/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3f4bb4e.css",
-    "static/js/main.5dfa00cb.js"
+    "static/js/main.ebf3e861.js"
   ]
 }
