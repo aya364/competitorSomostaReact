@@ -1,4 +1,6 @@
 {
+  "homepage": "https://aya364.github.io/competitorSomostaReact",
+
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "homepage": "https://aya364.github.io/competitorSomostaReact",
+    
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
