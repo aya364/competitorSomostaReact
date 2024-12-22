@@ -1,6 +1,6 @@
 {
-  "homepage": "https://aya364.github.io/somostaComptition",
-  "name": "competition",
+  "homepage": "https://aya364.github.io/competitorSomostaReact",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
