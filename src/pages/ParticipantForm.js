@@ -29,7 +29,7 @@ const ParticipantForm = () => {
       formPayload.append(key, formData[key]);
     }
     try {
-      const response = await axios.post('http://localhost:5000/register-participant', formPayload, {
+      const response = await axios.post('https://competitorsomostanode-production.up.railway.app/register-participant', formPayload, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setMessage(response.data.message);

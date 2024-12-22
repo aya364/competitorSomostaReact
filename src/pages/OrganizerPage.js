@@ -1,23 +1,4 @@
-// import React from "react";
 
-// function OrganizerPage() {
-//   return (
-//     <div className="min-h-screen bg-background flex items-center justify-center">
-//       <div className="text-center space-y-6">
-//         <h2 className="text-primary text-3xl font-bold">لوحة تحكم المنظم</h2>
-//         <p className="text-secondary">تحميل ملفات Excel للمتسابقين</p>
-//         <a
-//           href="http://localhost:5000/participants-excel"
-//           className="px-6 py-3 bg-secondary text-primary rounded-lg shadow-md hover:bg-primary hover:text-white"
-//         >
-//           تحميل الملف
-//         </a>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default OrganizerPage;
 
 
 import React, { useState } from 'react';
@@ -35,7 +16,7 @@ const OrganizerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/register-organizer', organizer);
+      const response = await axios.post('https://competitorsomostanode-production.up.railway.app/register-organizer', organizer);
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response?.data?.message || 'حدث خطأ أثناء التسجيل');
