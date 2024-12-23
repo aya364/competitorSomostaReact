@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import axios from "axios";
@@ -26,10 +24,13 @@ function HomePage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://competitorsomostanode-production.up.railway.app/api/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://competitorsomostanode-production.up.railway.app/api/login",
+        {
+          username,
+          password,
+        }
+      );
       if (response.data.success) {
         setView("organizer");
         localStorage.setItem("view", "organizer");
@@ -73,26 +74,23 @@ function HomePage() {
         </button>
 
         <ul className="space-y-4 p-4">
-        <NavLink to="/">
-          <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
-            
+          <NavLink to="/">
+            <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
               <FontAwesomeIcon icon={faHome} className="text-lg" />
               <span className="ml-3 text-lg">الصفحة الرئيسية</span>
-            
-          </li>
+            </li>
           </NavLink>
           <NavLink to="/excel">
-          <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
+            <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
               <FontAwesomeIcon icon={faUser} className="text-lg" />
               <span className="ml-3 text-lg">عرض المتسابقين</span>
-          </li>
+            </li>
           </NavLink>
           <NavLink to="/RegistrationForm">
-          <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
+            <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
               <FontAwesomeIcon icon={faAdd} className="text-lg" />
               <span className="ml-3 text-lg">تسجيل متسابق</span>
-            
-          </li>
+            </li>
           </NavLink>
           {view === "organizer" && (
             <li className="nav-link flex items-center cursor-pointer hover:bg-white hover:text-blue-900 p-2 rounded">
@@ -106,14 +104,6 @@ function HomePage() {
           )}
         </ul>
       </div>
-
-      {/* FAB button for small screens */}
-      {/* <button
-        className="text-xl p-3 bg-blue-900 text-white rounded-full fixed top-4 right-4 z-50 sm:hidden"
-        onClick={toggleSidebar}
-      >
-        <FontAwesomeIcon icon={faBars} />
-      </button> */}
     </div>
   );
 
@@ -217,69 +207,64 @@ function HomePage() {
 
   return (
     <div className="bg-gray-100 text-gray-900 min-h-screen flex flex-col sm:flex-row">
-    {view === "organizer" && <Sidebar />}
-        
-              {/* Main Content */}
-              <div
-                className={`flex-1 transition-all duration-300 ${
-                  view === "organizer"
-                    ? isSidebarOpen
-                      ? "sm:ml-60 sm:pl-3"
-                      : "sm:ml-0"
-                    : ""
-                }`}
-              >
-                {/* Top Navbar for small screens */}
-                {view === "organizer" && ( 
-                  <div className="bg-blue-900 text-white p-4 sm:hidden flex justify-between items-center">
-                    <button onClick={toggleSidebar}>
-                      <FontAwesomeIcon icon={faBars} />
-                    </button>
-                  </div>
-                )}
+      {view === "organizer" && <Sidebar />}
 
-{view === "organizer" && <EditPublicPage />}
-
-
-
-{/* <div> */}
-    {/* Initial View */}
-    {view === "initial" && (
-      <div className="min-h-screen bg-gradient-to-tr from-gray-100 to-gray-300 flex items-center justify-center p-6">
-        <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 relative">
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-          <h2 className="text-2xl font-bold text-blue-800 text-center mt-6">
-            اختر طريقة الدخول
-          </h2>
-          <p className="text-center text-gray-600 text-sm mt-2">
-            مرحبا! يمكنك الدخول كمتسابق للتسجيل ، أو كصاحب المسابقة لإدارة المسجلين
-          </p>
-          <div className="space-y-4 mt-8">
-            <button
-              onClick={() => setView("competitor")}
-              className="w-full bg-[#5D8AA8] text-white text-lg py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
-            >
-              الدخول كمتسابق
-            </button>
-
-            <button
-              onClick={() => setView("login")}
-              className="w-full bg-[#ADD8E6] text-blue text-lg py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
-            >
-              الدخول كصاحب المسابقة
+      {/* Main Content */}
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          view === "organizer"
+            ? isSidebarOpen
+              ? "sm:ml-60 sm:pl-3"
+              : "sm:ml-0"
+            : ""
+        }`}
+      >
+        {/* Top Navbar for small screens */}
+        {view === "organizer" && (
+          <div className="bg-blue-900 text-white p-4 sm:hidden flex justify-between items-center">
+            <button onClick={toggleSidebar}>
+              <FontAwesomeIcon icon={faBars} />
             </button>
           </div>
-        </div>
-      </div>
-    )}
+        )}
 
-    {/* </div> */}
+        {view === "organizer" && <EditPublicPage />}
 
+        {/* <div> */}
+        {/* Initial View */}
+        {view === "initial" && (
+          <div className="min-h-screen bg-gradient-to-tr from-gray-100 to-gray-300 flex items-center justify-center p-6">
+            <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 relative">
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                <FontAwesomeIcon icon={faUser} />
+              </div>
+              <h2 className="text-2xl font-bold text-blue-800 text-center mt-6">
+                اختر طريقة الدخول
+              </h2>
+              <p className="text-center text-gray-600 text-sm mt-2">
+                مرحبا! يمكنك الدخول كمتسابق للتسجيل ، أو كصاحب المسابقة لإدارة
+                المسجلين
+              </p>
+              <div className="space-y-4 mt-8">
+                <button
+                  onClick={() => setView("competitor")}
+                  className="w-full bg-[#5D8AA8] text-white text-lg py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
+                >
+                  الدخول كمتسابق
+                </button>
 
+                <button
+                  onClick={() => setView("login")}
+                  className="w-full bg-[#ADD8E6] text-blue text-lg py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
+                >
+                  الدخول كصاحب المسابقة
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
-
+        {/* </div> */}
 
         {view === "competitor" && (
           <>
@@ -297,35 +282,34 @@ function HomePage() {
 
         {view === "login" && (
           // <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-          <div className="min-h-screen bg-gradient-to-tr from-gray-100 to-gray-300 flex items-center justify-center p-6"> 
-  <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 relative">
-            <h1 className="text-2xl font-bold mb-4 text-center">
-              تسجيل الدخول
-            </h1>
-            <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              type="text"
-              placeholder="الاسم"
-              className="w-full mb-4 p-2 border rounded"
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="الرقم السري"
-              className="w-full mb-4 p-2 border rounded"
-            />
+          <div className="min-h-screen bg-gradient-to-tr from-gray-100 to-gray-300 flex items-center justify-center p-6">
+            <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 relative">
+              <h1 className="text-2xl font-bold mb-4 text-center">
+                تسجيل الدخول
+              </h1>
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                type="text"
+                placeholder="الاسم"
+                className="w-full mb-4 p-2 border rounded"
+              />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="الرقم السري"
+                className="w-full mb-4 p-2 border rounded"
+              />
 
-            <button
-            onClick={handleLogin}
-            className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
-          >
-            تسجيل الدخول
-          </button>
+              <button
+                onClick={handleLogin}
+                className="w-full bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-transform duration-200"
+              >
+                تسجيل الدخول
+              </button>
+            </div>
           </div>
-          </div>
-        
         )}
 
         {/* {view === "organizer" && (
@@ -340,7 +324,7 @@ function HomePage() {
           </>
         )} */}
 
-{/* {view === "organizer" && 
+        {/* {view === "organizer" && 
           
             // <EditPublicPage />
             <ActionButtons
