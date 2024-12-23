@@ -49,7 +49,7 @@ function RegistrationForm() {
     }
 
     try {
-      const response = await axios.post('https://competitorsomostanode-production.up.railway.app/api/register', data);
+      const response = await axios.post('https://competitorsomostanode-production-1a56.up.railway.app/api/register', data);
       if (response.data.success) {
         alert('تم التسجيل بنجاح');
         setFormData({

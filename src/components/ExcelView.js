@@ -15,7 +15,7 @@ import {
   faPlus,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-
+// competitorsomostanode-production-1a56.up.railway.app
 function ExcelView() {
   const [view, setView] = useState(localStorage.getItem("view") || "initial");
   const [registrations, setRegistrations] = useState([]);
@@ -40,7 +40,7 @@ function ExcelView() {
     try {
       await axios.put(
         // `http://localhost:5000/api/register/${editingId}`,
-        `https://competitorsomostanode-production.up.railway.app/api/register/${editingId}`,
+        `https://competitorsomostanode-production-1a56.up.railway.app/api/register/${editingId}`,
         editData
       );
       setRegistrations((prev) =>
@@ -59,7 +59,7 @@ function ExcelView() {
   useEffect(() => {
     const fetchRegistrations = async () => {
       try {
-        const response = await axios.get("https://competitorsomostanode-production.up.railway.app/api/register");
+        const response = await axios.get("competitorsomostanode-production-1a56.up.railway.app/api/register");
         setRegistrations(response.data);
       } catch (error) {
         console.error("Error fetching registrations", error);
@@ -72,7 +72,7 @@ function ExcelView() {
   const downloadExcel = async () => {
     try {
       const response = await axios.get(
-        "https://competitorsomostanode-production.up.railway.app/api/excel/download",
+        "https://competitorsomostanode-production-1a56.up.railway.app/api/excel/download",
         {
           responseType: "blob",
         }
@@ -91,7 +91,7 @@ function ExcelView() {
   const handleDelete = async (id) => {
     if (window.confirm("هل تريد حذف هذا المسجل؟")) {
       try {
-        await axios.delete(`https://competitorsomostanode-production.up.railway.app/api/register/${id}`);
+        await axios.delete(`https://competitorsomostanode-production-1a56.up.railway.app/api/register/${id}`);
         setRegistrations(registrations.filter((r) => r._id !== id));
       } catch (error) {
         console.error("Error deleting registration:", error);
@@ -323,7 +323,7 @@ function ExcelView() {
                         </td>
                         <td className="py-3 px-4 border-b border-gray-300 border-r text-blue-600">
                           <a
-                            href={`https://competitorsomostanode-production.up.railway.app/${registration.birthCertificate}`}
+                            href={`https://competitorsomostanode-production-1a56.up.railway.app/${registration.birthCertificate}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:underline"

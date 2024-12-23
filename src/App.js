@@ -50,7 +50,7 @@ import HomePage from "./components/HomePage";
 import EditPublicPage from "./components/EditPublicPage";
 import "./App.css";
 // import Sidebar from "./components/Sidebar";
-
+// competitorsomostanode-production-1a56.up.railway.app
 function App() {
   return (
     <Router>

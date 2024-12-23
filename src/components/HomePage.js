@@ -26,7 +26,7 @@ function HomePage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://competitorsomostanode-production.up.railway.app/api/login", {
+      const response = await axios.post("https://competitorsomostanode-production-1a56.up.railway.app/api/login", {
         username,
         password,
       });
