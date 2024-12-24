@@ -285,7 +285,7 @@ function HomePage() {
           <div className="min-h-screen bg-gradient-to-tr from-gray-100 to-gray-300 flex items-center justify-center p-6">
             <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 relative">
               <h1 className="text-2xl font-bold mb-4 text-center">
-                تسجيل الدخول
+                2تسجيل الدخول
               </h1>
               <input
                 value={username}
